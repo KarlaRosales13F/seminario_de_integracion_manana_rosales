@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { Suspense, lazy, useEffect } from 'react'
 import { useAuthStore } from '@/presentation/store/auth.store'
 import ProtectedRoute from './ProtectedRoute'
-import AppShell  from '@/presentation/components/AppShell'
+import AppShell from '@/presentation/components/AppShell'
 import PlaceholderPage from '../pages/PlaceholderPage'
 
 // ─── Lazy imports ─────────────────────────────────────────────────────────────
