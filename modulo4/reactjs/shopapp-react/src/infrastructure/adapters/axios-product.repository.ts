@@ -5,8 +5,15 @@ import type { ProductRepository } from '@/domain/ports/product.repository'
 import type { Product } from '@/domain/entities/product.entity'
 import type { PaginatedResult } from '@/domain/entities/paginated-result.entity'
 import type { ProductFilters } from '@/domain/entities/product-filters.entity'
+import type { OrderStats } from '@/domain/entities/order-stats.entity'
+import type { ProductStats } from '@/domain/entities/product-stats.entity'
 
 export class AxiosProductRepository implements ProductRepository {
+  getStats(): Promise<ProductStats>
+  getStats(): Promise<OrderStats>
+  getStats(): Promise<import("../../domain/entities/product-stats.entity").ProductStats> | Promise<import("../../domain/entities/order-stats.entity").OrderStats> {
+    throw new Error('Method not implemented.')
+  }
   async getProducts(
     filters?: Partial<ProductFilters>,
     page = 1,
@@ -39,4 +46,5 @@ export class AxiosProductRepository implements ProductRepository {
       throw parseApiError(err)
     }
   }
+
 }
