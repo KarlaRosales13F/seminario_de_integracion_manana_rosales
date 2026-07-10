@@ -1,4 +1,3 @@
-product.use-case.ts// src/application/use-cases/auth.use-case.ts
 import type { AuthRepository, AuthSession } from '@/domain/ports/auth.repository'
 import type { LoginDto } from '../dtos/login.dto'
 import type { RegisterDto } from '../dtos/register.dto'
