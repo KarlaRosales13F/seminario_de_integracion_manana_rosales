@@ -6,6 +6,7 @@ import ProtectedRoute from './ProtectedRoute'
 import AppShell from '@/presentation/components/AppShell'
 import PlaceholderPage from '../pages/PlaceholderPage'
 import AdminDashboardPage from '../pages/admin/AdminDashboardPage'
+import AdminCategoriesPage from '../components/admin/AdminCategoriesPage'
 
 // ─── Lazy imports ─────────────────────────────────────────────────────────────
 
@@ -103,7 +104,7 @@ export default function AppRouter() {
               path="/admin/categories"
               element={
                 <ProtectedRoute requireStaff>
-                  <PlaceholderPage title="Admin Categorías — Módulo 10" />
+                  <AdminCategoriesPage />
                 </ProtectedRoute>
               }
             />
@@ -111,7 +112,7 @@ export default function AppRouter() {
               path="/admin/products"
               element={
                 <ProtectedRoute requireStaff>
-                  <PlaceholderPage title="Admin Productos — Módulo 11" />
+                  <AdminProductsPage />
                 </ProtectedRoute>
               }
             />

@@ -96,4 +96,5 @@ export const useCatalogStore = create<CatalogState & CatalogActions>((set, get) 
   setPage(page) {
     set({ currentPage: page })
   },
+  
 }))
