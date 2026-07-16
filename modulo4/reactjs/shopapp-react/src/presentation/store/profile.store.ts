@@ -58,4 +58,18 @@ export const useProfileStore = create<ProfileState & ProfileActions>((set) => ({
   clearError() {
     set({ error: null })
   },
+  // ── Agregar a ProfileActions ──
+  uploadAvatar(file: File): Promise<void>
+
+// ── Agregar a la implementación del store ──
+async uploadAvatar(file) {
+    try {
+      const profile = await userUseCase.uploadAvatar(file)
+      set({ profile })
+    } catch (err) {
+      const message = err instanceof ApiException ? err.detail : 'No se pudo subir el avatar.'
+      set({ error: message })
+      throw err
+    }
+  },
 }))

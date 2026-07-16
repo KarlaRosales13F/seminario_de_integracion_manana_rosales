@@ -68,4 +68,16 @@ export class AxiosUserRepository implements UserRepository {
       throw parseApiError(err)
     }
   }
+  // ── Agregar a la clase AxiosUserRepository existente ──
+  async uploadAvatar(file: File): Promise<UserProfile> {
+    const formData = new FormData()
+    formData.append('avatar', file)
+
+    try {
+      const { data } = await apiClient.patch<UserProfile>('/users/profile/', formData)
+      return data
+    } catch (err) {
+      throw parseApiError(err)
+    }
+  }
 }

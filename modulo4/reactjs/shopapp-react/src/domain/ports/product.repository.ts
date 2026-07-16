@@ -31,4 +31,6 @@ export interface ProductRepository {
   ): Promise<Product>
   deleteProduct(id: number): Promise<void>
   restockProduct(id: number, quantity: number): Promise<{ id: number; name: string; new_stock: number }>
+  // ── Agregar a la interfaz ProductRepository existente ──
+  uploadImage(id: number, file: File): Promise<Product>
 }
